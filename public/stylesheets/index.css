@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    font-size: 13px;
+}
+.head {
+    color: #fff;
+    height: 40px;
+    box-shadow:0px 5px 10px 1px rgba(255, 255, 255, .1);
+    background-color: #111;
+    /* display: inline-block; */
+}
+.head>.add-note {
+    border: solid 1px #fff;
+    border-radius: 3px;
+    background-color: #111;
+    float: left;    
+    cursor: pointer;
+    margin: 5px 10px;
+    padding: 3px 10px;
+}
+.head>.user {
+    float: right;
+    padding: 10px;
+}
+.head>.user>.user-img {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+.head>.user>.user-out {
+    cursor: pointer;
+}
+.content {
+    position: relative;
+    background: url(http://img4.imgtn.bdimg.com/it/u=3005810469,3007327073&fm=214&gp=0.jpg);
+}
