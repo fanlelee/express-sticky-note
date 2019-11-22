@@ -8,7 +8,6 @@ var noteModel = require('../model/note.js')
 /* 获取所有notes */
 router.get('/notes', function(req, res, next){
     noteModel.findAll({raw:true}).then(function(notes){
-        console.log(notes)
         res.send({
             status:0,
             data: notes
