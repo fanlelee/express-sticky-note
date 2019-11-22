@@ -33,6 +33,9 @@ body {
 .head>.user>.user-out {
     cursor: pointer;
 }
+.head>.user>.user-login {
+    cursor: pointer;
+}
 .content {
     position: relative;
     background: url(http://img4.imgtn.bdimg.com/it/u=3005810469,3007327073&fm=214&gp=0.jpg);
