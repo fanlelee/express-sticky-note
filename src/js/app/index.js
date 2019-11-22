@@ -1,6 +1,6 @@
 
 $('.github-login').on('click', function(){
-    $.get('/auth/')
+    $.get('/auth/github')
 })
 
 var NoteManager = require('mod/note-manager.js')
