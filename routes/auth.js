@@ -27,11 +27,11 @@ passport.use(new GitHubStrategy({
     clientSecret: GITHUB_CLIENT_SECRET,
     callbackURL: "http://fanzhuolei.club:3333/auth/github/callback"
   },
-  function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ githubId: profile.id }, function (err, user) {
-      return cb(err, user)
-    })
-  }
+//   function(accessToken, refreshToken, profile, cb) {
+//     User.findOrCreate({ githubId: profile.id }, function (err, user) {
+//       return cb(err, user)
+//     })
+//   }
 ))
 
 
