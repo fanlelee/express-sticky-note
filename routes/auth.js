@@ -1,55 +1,56 @@
-var express = require('express')
-var router = express.Router()
-var passport = require('passport')
-var GitHubStrategy = require('passport-github').Strategy
+var express = require('express');
+var router = express.Router();
 
-var GITHUB_CLIENT_ID = "0246998c2406c9df9fe3"
-var GITHUB_CLIENT_SECRET = "5231efd89190ddeeb2bb03028c6c5789ac577872"
+var passport = require('passport');
+var GitHubStrategy = require('passport-github').Strategy;
+
+
 
 passport.serializeUser(function(user, done) {
-    console.log('---------------serializeUser---------------')
-    console.log(user)
-    console.log('---------------serializeUser---------------')
-    done(null, user.id)//此id就是sessionID
-})
+  console.log('---serializeUser---')
+  console.log(user)
+  done(null, user);
+});
 
-passport.deserializeUser(function(id, done) {
-    console.log('---------------deserializeUser---------------')
-    console.log(id)
-    console.log('---------------deserializeUser---------------')
-    User.findById(id, function (err, user) {
-        done(err, user)
-    })
-})
+passport.deserializeUser(function(obj, done) {
+  console.log('---deserializeUser---')
+  done(null, obj);
+});
+
 
 passport.use(new GitHubStrategy({
-    clientID: GITHUB_CLIENT_ID,
-    clientSecret: GITHUB_CLIENT_SECRET,
-    callbackURL: "http://fanzhuolei.club:3330/auth/github/callback"
+    clientID: 'b7bfd7fcc56fdb76ad7f',
+    clientSecret: 'acbbfd5555ded60add3c1069a75d5fd32301b621',
+    callbackURL: "http://post.hunger-valley.com/auth/github/callback"
   },
-  function(accessToken, refreshToken, profile, cb) {
+  function(accessToken, refreshToken, profile, done) {
     // User.findOrCreate({ githubId: profile.id }, function (err, user) {
-    //   return cb(err, user)
-    // })
+    // });
+    done(null, profile);
   }
-))
+));
 
 
-router.get('/github',   
-    passport.authenticate('github'),
-    function(req,res,next){
-        console.log('gitgit')
-    }
-)
-router.get('/github/callback',   
-    passport.authenticate('github', { failureRedirect: '/' }),
-    function(req, res) {
-        console.log('secceessesssd!')
-        console.log(req.body)
-        console.log(req.user)
-        console.log('secceessesssd!')
-        // res.redirect('/')
-    }
-)
+router.get('/logout', function(req, res){
+  req.session.destroy();
+  res.redirect('/');
+})
 
-module.exports = router
+router.get('/github',
+  passport.authenticate('github'));
+
+router.get('/github/callback',
+  passport.authenticate('github', { failureRedirect: '/login' }),
+  function(req, res) {
+    req.session.user = {
+      id: req.user.id,
+      username: req.user.displayName || req.user.username,
+      avatar: req.user._json.avatar_url,
+      provider: req.user.provider
+    };
+    res.redirect('/');
+  });
+
+
+
+module.exports = router;
