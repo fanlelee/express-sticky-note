@@ -36,10 +36,7 @@ passport.use(new GitHubStrategy({
 
 
 router.get('/github',   
-    passport.authenticate('github'),
-    function(req,res,next){
-        console.log('gitgit')
-    }
+    passport.authenticate('github')
 )
 router.get('/github/callback',   
     passport.authenticate('github', { failureRedirect: '/' }),
