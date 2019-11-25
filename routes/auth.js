@@ -19,9 +19,9 @@ passport.deserializeUser(function(obj, done) {
 
 
 passport.use(new GitHubStrategy({
-    clientID: 'b7bfd7fcc56fdb76ad7f',
-    clientSecret: 'acbbfd5555ded60add3c1069a75d5fd32301b621',
-    callbackURL: "http://post.hunger-valley.com/auth/github/callback"
+    clientID: '0246998c2406c9df9fe3',
+    clientSecret: '5231efd89190ddeeb2bb03028c6c5789ac577872',
+    callbackURL: "http://fanzhuolei.club:3330/auth/github/callback"
   },
   function(accessToken, refreshToken, profile, done) {
     // User.findOrCreate({ githubId: profile.id }, function (err, user) {
