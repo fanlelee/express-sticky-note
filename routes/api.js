@@ -24,14 +24,14 @@ router.get('/notes', function(req, res, next){
 /* 新增note */
 router.post('/note/add', function(req, res, next){
     if(!req.session.user){
-        res.send({
+        return res.send({
             status: 1,
             errorMsg: '请先登录！'
         })
     }
 
     if(!req.body.content){
-        res.send({
+        return res.send({
             status: 1,
             errorMsg: '内容不能为空！'
         })
@@ -55,7 +55,7 @@ router.post('/note/add', function(req, res, next){
 /* 删除指定note */
 router.post('/note/delete', function(req, res, next){
     if(!req.session.user){
-        res.send({
+        return res.send({
             status: 1,
             errorMsg: '请先登录！'
         })
@@ -70,7 +70,7 @@ router.post('/note/delete', function(req, res, next){
 /* 修改指定note */
 router.post('/note/edit', function(req, res, next){
     if(!req.session.user){
-        res.send({
+        return res.send({
             status: 1,
             errorMsg: '请先登录！'
         })
