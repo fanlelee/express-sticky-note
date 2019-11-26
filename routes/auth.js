@@ -39,7 +39,7 @@ router.get('/github',
   passport.authenticate('github'));
 
 router.get('/github/callback',
-  passport.authenticate('github', { failureRedirect: '/login' }),
+//   passport.authenticate('github', { failureRedirect: '/login' }),
   function(req, res) {
       console.log('seccess11111')
     // req.session.user = {
@@ -48,7 +48,7 @@ router.get('/github/callback',
     //   avatar: req.user._json.avatar_url,
     //   provider: req.user.provider
     // };
-    res.redirect('/');
+    // res.redirect('/');
   });
 
 module.exports = router
