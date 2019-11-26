@@ -15,7 +15,7 @@ var NoteManager = (function(){
         })
     }
     function add(){
-        new Note({username:'fanlelee'})
+        new Note()
     }
 
     return {

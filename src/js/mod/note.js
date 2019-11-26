@@ -134,6 +134,8 @@ Note.prototype = {
                 Toast('删除成功！')
                 _this.$note.remove()
                 Event.fire('waterfall')
+            }else{
+                Toast(res.errorMsg)
             }
         })
     },
@@ -146,6 +148,8 @@ Note.prototype = {
             if(res.status === 0){
                 Toast('修改成功！')
                 Event.fire('waterfall')
+            }else{
+                Toast(res.errorMsg)
             }
         })
     }
