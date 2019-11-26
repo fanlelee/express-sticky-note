@@ -25,7 +25,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GitHubStrategy({
     clientID: GITHUB_CLIENT_ID,
     clientSecret: GITHUB_CLIENT_SECRET,
-    callbackURL: "http://fanzhuolei.club:3330/auth/github/callback"
+    callbackURL: "http://fanzhuolei.club/auth/github/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
     // User.findOrCreate({ githubId: profile.id }, function (err, user) {
@@ -48,7 +48,7 @@ router.get('/github/callback',
     //   avatar: req.user._json.avatar_url,
     //   provider: req.user.provider
     // };
-    // res.redirect('/');
+    res.redirect('/');
   });
 
 module.exports = router
