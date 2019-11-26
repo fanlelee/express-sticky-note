@@ -34,7 +34,9 @@ body {
     cursor: pointer;
 }
 .head>.user>.user-login {
-    cursor: pointer;
+    /* cursor: pointer; */
+    text-decoration: none;
+    color: #fff;
 }
 .content {
     position: relative;

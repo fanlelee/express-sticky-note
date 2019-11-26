@@ -9,7 +9,6 @@
 </head>
 <body>
   <div class="head">
-    <a href="https://github.com/login/oauth/authorize?response_type=code&redirect_uri=http%3A%2F%2Ffanzhuolei.club%3A3330%2Fauth%2Fgithub%2Fcallback&client_id=0246998c2406c9df9fe3">a</a>
     <span class="add-note">添加</span>
     <div class="user">
       <% if(isLogin){ %>
@@ -18,9 +17,7 @@
         <span>|</span>
         <span class="user-out">注销</span>
       <% }else{ %>
-        <span class="user-login github-login">
-            <a class="login" title="GitHub登录" href="/auth/github"> GitHub登录</a>
-        </span>
+        <a href="/auth/github" class="user-login">GitHub登陆</a>
       <% } %>
     </div>
   </div>

@@ -1,5 +1,6 @@
 
 // $('.github-login').on('click', function(){
+//     // console.log('auth')
 //     $.get('/auth/github')
 // })
 
