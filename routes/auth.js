@@ -10,14 +10,14 @@ var GITHUB_CLIENT_SECRET = "5231efd89190ddeeb2bb03028c6c5789ac577872"
 passport.serializeUser(function(user, done) {
     console.log('---------------serializeUser---------------')
     console.log(user)
-    console.log('---------------serializeUser---------------')
+    console.log('---------------serializeUser----end-----------')
     done(null, user)//此user.id就是sessionID
 })
 
 passport.deserializeUser(function(obj, done) {
     console.log('---------------deserializeUser---------------')
     console.log(obj)
-    console.log('---------------deserializeUser---------------')
+    console.log('---------------deserializeUser----end-----------')
     // User.findById(id, function (err, user) {
         done(null, obj)
     // })
