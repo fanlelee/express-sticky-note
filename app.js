@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
