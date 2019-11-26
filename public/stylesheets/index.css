@@ -30,7 +30,7 @@ body {
     border-radius: 10px;
     vertical-align: middle;
 }
-.head>.user>.user-login.user-out{
+.head>.user>.user-login,.user-out{
     text-decoration: none;
     color: #fff;
 }
