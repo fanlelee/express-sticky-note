@@ -12,10 +12,10 @@
     <span class="add-note">添加</span>
     <div class="user">
       <% if(isLogin){ %>
-        <img class="user-img" src="https://avatars1.githubusercontent.com/u/34830704?v=4" alt="">
-        <span class="user-name">fanlelee</span>
+        <img class="user-img" src="<%= user.avatar %>" alt="">
+        <span class="user-name"><%= user.username %></span>
         <span>|</span>
-        <span class="user-out">注销</span>
+        <a class="user-out" href="/auth/logout"> 注销</a>
       <% }else{ %>
         <a href="/auth/github" class="user-login">GitHub登陆</a>
       <% } %>

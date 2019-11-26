@@ -30,11 +30,7 @@ body {
     border-radius: 10px;
     vertical-align: middle;
 }
-.head>.user>.user-out {
-    cursor: pointer;
-}
-.head>.user>.user-login {
-    /* cursor: pointer; */
+.head>.user>.user-login.user-out{
     text-decoration: none;
     color: #fff;
 }
