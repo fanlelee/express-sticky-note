@@ -7,4 +7,4 @@
 4. passport passport-github auth2.0
 5. sequelize sqlite3
 
-可通过[http://fanzhuolei.club/](http://fanzhuolei.club/)
+可通过[http://fanzhuolei.club/](http://fanzhuolei.club/)访问
