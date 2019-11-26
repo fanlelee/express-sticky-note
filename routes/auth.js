@@ -1,6 +1,6 @@
 var express = require('express')
-var router = express()
-// var router = express.Router()
+// var router = express()
+var router = express.Router()
 var passport = require('passport')
 var GitHubStrategy = require('passport-github').Strategy
 
@@ -29,9 +29,9 @@ passport.use(new GitHubStrategy({
     callbackURL: "http://fanzhuolei.club/auth/github/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
-    // User.findOrCreate({ githubId: profile.id }, function (err, user) {
-    //   return cb(err, user)
-    // })
+    User.findOrCreate({ githubId: profile.id }, function (err, user) {
+      return cb(err, user)
+    })
   }
 ))
 
