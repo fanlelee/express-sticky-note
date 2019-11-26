@@ -48,7 +48,7 @@ router.get('/github/callback',
     //   avatar: req.user._json.avatar_url,
     //   provider: req.user.provider
     // };
-    // res.redirect('/');
+    res.redirect('/');
   });
 
 module.exports = router
