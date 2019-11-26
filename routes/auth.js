@@ -11,16 +11,16 @@ passport.serializeUser(function(user, done) {
     console.log('---------------serializeUser---------------')
     console.log(user)
     console.log('---------------serializeUser---------------')
-    done(null, user.id)//此id就是sessionID
+    done(null, user)//此user.id就是sessionID
 })
 
-passport.deserializeUser(function(id, done) {
+passport.deserializeUser(function(obj, done) {
     console.log('---------------deserializeUser---------------')
-    console.log(id)
+    console.log(obj)
     console.log('---------------deserializeUser---------------')
-    User.findById(id, function (err, user) {
-        done(err, user)
-    })
+    // User.findById(id, function (err, user) {
+        done(null, obj)
+    // })
 })
 
 passport.use(new GitHubStrategy({
