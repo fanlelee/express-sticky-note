@@ -29,9 +29,9 @@ passport.use(new GitHubStrategy({
     callbackURL: "http://fanzhuolei.club/auth/github/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ githubId: profile.id }, function (err, user) {
-      return cb(err, user)
-    })
+    // User.findOrCreate({ githubId: profile.id }, function (err, user) {
+        return cb(null, profile);
+    // })
   }
 ))
 
