@@ -1,5 +1,6 @@
 var express = require('express')
-var router = express.Router()
+var router = express
+// var router = express.Router()
 var passport = require('passport')
 var GitHubStrategy = require('passport-github').Strategy
 
