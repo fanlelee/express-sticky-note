@@ -9,7 +9,7 @@ var noteModel = require('../model/note.js')
 /* 获取所有notes */
 router.get('/notes', function(req, res, next){
     var opts = {raw:true}
-    if(!req.session.user&&req.session){
+    if(req.session.user&&req.session){
         opts.where = {username:req.session.user.username }
     }
 
