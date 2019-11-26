@@ -52,7 +52,7 @@ router.get('/github/callback',
     res.redirect('/')
   })
 
-router.get('logout', function(req, res){
+router.get('/logout', function(req, res){
   req.session.destroy()
   res.redirect('/')
 })
